@@ -1,0 +1,6 @@
+import pytest
+from app.utils.loop_bridge import run_on_loop
+@pytest.mark.asyncio async def test_run_on_loop_without_loop(): async def sample(): return 42
+result = await run_on_loop(None, sample())
+
+assert result == 42
